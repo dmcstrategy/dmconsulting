@@ -11,32 +11,35 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+
   <style>
     :root {
-      --bg: #040404;
-      --bg2: #0b0705;
+      --bg: #030303;
+      --bg-soft: #0a0604;
       --gold: #d8a245;
       --gold-bright: #ffd27a;
       --gold-deep: #9a621d;
-      --gold-line: rgba(216,162,69,0.55);
-      --gold-soft: rgba(216,162,69,0.18);
-      --gold-faint: rgba(216,162,69,0.07);
-      --text: #f7e5bf;
+      --gold-line: rgba(216, 162, 69, 0.56);
+      --gold-soft: rgba(216, 162, 69, 0.18);
+      --gold-faint: rgba(216, 162, 69, 0.08);
+      --text: #f7e6bf;
       --muted: #ead6ae;
-      --panel: rgba(11, 8, 6, 0.78);
-      --shadow: 0 0 22px rgba(216,162,69,0.16), 0 0 56px rgba(216,162,69,0.08);
+      --panel: rgba(10, 7, 5, 0.9);
       --serif: "Cormorant Garamond", Georgia, serif;
       --sans: "Inter", system-ui, sans-serif;
     }
 
     * { box-sizing: border-box; }
     html, body { margin: 0; min-height: 100%; }
+    html { scroll-behavior: smooth; }
+
     body {
       background:
-        radial-gradient(circle at 50% 16%, rgba(255,211,122,0.08), transparent 18%),
-        radial-gradient(circle at 18% 40%, rgba(216,162,69,0.08), transparent 26%),
-        radial-gradient(circle at 85% 45%, rgba(216,162,69,0.07), transparent 24%),
-        linear-gradient(180deg, #020202 0%, #090604 45%, #020202 100%);
+        radial-gradient(circle at 50% 14%, rgba(255, 211, 122, 0.08), transparent 18%),
+        radial-gradient(circle at 18% 40%, rgba(216, 162, 69, 0.07), transparent 26%),
+        radial-gradient(circle at 84% 45%, rgba(216, 162, 69, 0.07), transparent 24%),
+        linear-gradient(180deg, #020202 0%, #080604 45%, #020202 100%);
       color: var(--text);
       overflow-x: hidden;
       font-family: var(--serif);
@@ -53,23 +56,23 @@
 
     body::before {
       background-image:
-        linear-gradient(rgba(216,162,69,0.025) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(216,162,69,0.025) 1px, transparent 1px);
-      background-size: 78px 78px;
-      mask-image: radial-gradient(circle at center, black 25%, transparent 92%);
-      opacity: .85;
+        linear-gradient(rgba(216, 162, 69, 0.022) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(216, 162, 69, 0.022) 1px, transparent 1px);
+      background-size: 80px 80px;
+      mask-image: radial-gradient(circle at center, black 24%, transparent 88%);
+      opacity: 0.9;
     }
 
     body::after {
       background:
-        radial-gradient(circle at 12% 22%, rgba(255,210,122,.8) 0 1px, transparent 2px),
-        radial-gradient(circle at 22% 62%, rgba(255,210,122,.75) 0 1px, transparent 2px),
-        radial-gradient(circle at 75% 28%, rgba(255,210,122,.7) 0 1px, transparent 2px),
-        radial-gradient(circle at 85% 68%, rgba(255,210,122,.65) 0 1px, transparent 2px),
-        radial-gradient(circle at 58% 87%, rgba(255,210,122,.55) 0 1px, transparent 2px),
-        radial-gradient(circle at 48% 38%, rgba(255,210,122,.6) 0 1px, transparent 2px);
-      filter: blur(.3px);
-      opacity: .75;
+        radial-gradient(circle at 12% 22%, rgba(255, 210, 122, 0.75) 0 1px, transparent 2px),
+        radial-gradient(circle at 22% 62%, rgba(255, 210, 122, 0.72) 0 1px, transparent 2px),
+        radial-gradient(circle at 75% 28%, rgba(255, 210, 122, 0.68) 0 1px, transparent 2px),
+        radial-gradient(circle at 85% 68%, rgba(255, 210, 122, 0.62) 0 1px, transparent 2px),
+        radial-gradient(circle at 58% 87%, rgba(255, 210, 122, 0.52) 0 1px, transparent 2px),
+        radial-gradient(circle at 48% 38%, rgba(255, 210, 122, 0.58) 0 1px, transparent 2px);
+      filter: blur(0.35px);
+      opacity: 0.72;
     }
 
     a { color: inherit; text-decoration: none; }
@@ -88,12 +91,12 @@
       position: relative;
       min-height: calc(100vh - 20px);
       overflow: hidden;
-      border: 1px solid rgba(216,162,69,0.22);
+      border: 1px solid rgba(216, 162, 69, 0.22);
       background:
-        radial-gradient(circle at 50% 44%, rgba(216,162,69,0.08), transparent 35%),
-        linear-gradient(180deg, rgba(7,5,4,0.94), rgba(10,7,5,0.92));
+        radial-gradient(circle at 50% 44%, rgba(216, 162, 69, 0.08), transparent 35%),
+        linear-gradient(180deg, rgba(7, 5, 4, 0.95), rgba(10, 7, 5, 0.93));
       box-shadow:
-        0 0 0 1px rgba(216,162,69,0.08) inset,
+        0 0 0 1px rgba(216, 162, 69, 0.08) inset,
         0 0 120px rgba(0,0,0,0.55),
         0 0 80px rgba(216,162,69,0.05);
       padding: 34px 38px 40px;
@@ -109,7 +112,7 @@
       height: 120px;
       z-index: 4;
       pointer-events: none;
-      opacity: .9;
+      opacity: 0.9;
     }
 
     .frame::before {
@@ -151,41 +154,9 @@
       position: relative;
       z-index: 3;
       display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      gap: 22px;
-      padding-bottom: 24px;
-    }
-
-    .brand {
-      display: flex;
+      justify-content: flex-end;
       align-items: center;
-      gap: 18px;
-      max-width: 760px;
-    }
-
-    .logo {
-      width: clamp(78px, 9vw, 122px);
-      filter: drop-shadow(0 0 16px rgba(216,162,69,.2));
-      flex: 0 0 auto;
-    }
-
-    .brand-name {
-      font-size: clamp(2rem, 4vw, 4rem);
-      line-height: .9;
-      letter-spacing: .02em;
-      text-transform: uppercase;
-      color: var(--text);
-      text-shadow: 0 0 16px rgba(216,162,69,.08);
-    }
-
-    .brand-tag {
-      font-family: var(--sans);
-      text-transform: uppercase;
-      letter-spacing: .28em;
-      margin-top: 8px;
-      font-size: .76rem;
-      color: #d9b16c;
+      padding-bottom: 12px;
     }
 
     .top-cta,
@@ -197,6 +168,7 @@
       color: #f3cd8a;
       box-shadow: 0 0 0 1px rgba(216,162,69,.08) inset;
       transition: transform .2s ease, box-shadow .2s ease;
+      cursor: pointer;
     }
 
     .top-cta:hover,
@@ -217,7 +189,34 @@
       position: relative;
       z-index: 3;
       text-align: center;
-      padding: 14px 0 18px;
+      padding: 6px 0 18px;
+    }
+
+    .hero-brand-block {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      margin: 2px auto 18px;
+      width: 100%;
+    }
+
+    .hero-main-logo {
+      width: clamp(280px, 48vw, 700px);
+      max-width: 100%;
+      filter:
+        drop-shadow(0 0 18px rgba(216,162,69,.28))
+        drop-shadow(0 0 48px rgba(216,162,69,.16));
+    }
+
+    .hero-brand-tag {
+      margin-top: 10px;
+      font-family: var(--sans);
+      text-transform: uppercase;
+      letter-spacing: 0.28em;
+      font-size: 0.82rem;
+      color: #d9b16c;
+      text-align: center;
     }
 
     .hero-line,
@@ -330,7 +329,7 @@
       position: absolute;
       z-index: 2;
       background: linear-gradient(180deg, rgba(9,7,6,.92), rgba(12,9,7,.86));
-      box-shadow: 0 0 0 1px rgba(216,162,69,.08) inset, var(--shadow);
+      box-shadow: 0 0 0 1px rgba(216,162,69,.08) inset, 0 0 22px rgba(216,162,69,.15), 0 0 56px rgba(216,162,69,.08);
       overflow: hidden;
     }
 
@@ -493,6 +492,24 @@
       font-size: 1.02rem;
     }
 
+    .calendly-shell {
+      width: min(100%, 920px);
+      margin: 26px auto 0;
+      padding: 16px;
+      border: 1px solid rgba(216,162,69,.24);
+      background: linear-gradient(180deg, rgba(8,6,5,.82), rgba(12,8,6,.88));
+      box-shadow: 0 0 0 1px rgba(216,162,69,.06) inset, 0 0 28px rgba(216,162,69,.08);
+    }
+
+    .calendly-inline-widget {
+      width: 100%;
+      min-width: 320px;
+      height: 780px;
+      border: 1px solid rgba(216,162,69,.14);
+      box-shadow: 0 0 22px rgba(216,162,69,.05) inset;
+      background: rgba(0,0,0,.14);
+    }
+
     footer {
       margin-top: 30px;
       padding-top: 18px;
@@ -509,8 +526,6 @@
 
     @media (max-width: 980px) {
       .frame { padding: 24px 20px 30px; }
-      .header { flex-direction: column; align-items: stretch; }
-      .top-cta { width: 100%; text-align: center; }
       .diagram-wrap {
         min-height: auto;
         display: grid;
@@ -529,44 +544,24 @@
       }
       .hex { height: 290px; order: -1; }
       .pillars { grid-template-columns: repeat(3, 1fr); }
+      .hero-main-logo { width: clamp(250px, 58vw, 560px); }
     }
 
     @media (max-width: 640px) {
       .poster { width: calc(100vw - 10px); margin: 5px auto; padding: 0; }
       .frame { min-height: auto; padding: 18px 14px 24px; }
-      .brand { align-items: center; }
-      .brand-name { font-size: 1.65rem; }
-      .brand-tag { letter-spacing: .14em; font-size: .7rem; }
+      .top-cta { width: 100%; text-align: center; }
       .pillars { grid-template-columns: 1fr 1fr; }
       .hero-copy, .section-copy, .footer-cta p { font-size: .96rem; }
+      .hero-brand-tag { letter-spacing: .16em; font-size: .72rem; }
+      .calendly-shell { padding: 10px; }
+      .calendly-inline-widget { height: 700px; }
     }
 
     @media (max-width: 440px) {
       .pillars { grid-template-columns: 1fr; }
     }
-  
-    .calendly-shell {
-      width: min(100%, 920px);
-      margin: 26px auto 0;
-      padding: 16px;
-      border: 1px solid rgba(216,162,69,.24);
-      background: linear-gradient(180deg, rgba(8,6,5,.82), rgba(12,8,6,.88));
-      box-shadow: 0 0 0 1px rgba(216,162,69,.06) inset, 0 0 28px rgba(216,162,69,.08);
-    }
-
-    .calendly-inline-widget {
-      width: 100%;
-      border: 1px solid rgba(216,162,69,.14);
-      box-shadow: 0 0 22px rgba(216,162,69,.05) inset;
-      background: rgba(0,0,0,.14);
-    }
-
-    @media (max-width: 640px) {
-      .calendly-shell { padding: 10px; }
-      .calendly-inline-widget { height: 700px !important; }
-    }
   </style>
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 </head>
 <body>
   <main class="poster">
@@ -639,18 +634,15 @@
       </svg>
 
       <header class="header">
-        <div class="brand">
-          <img class="logo" src="logo-dark.png" alt="Dawn McPherson Consulting logo" />
-          <div>
-            <div class="brand-name">Dawn McPherson Consulting</div>
-            <div class="brand-tag">Strategy. Systems. Scalability.</div>
-          </div>
-        </div>
-
         <a class="top-cta" href="#contact">Book a Strategy Call</a>
       </header>
 
       <section class="hero">
+        <div class="hero-brand-block">
+          <img class="hero-main-logo" src="logo-dark.png" alt="Dawn McPherson Consulting logo" />
+          <div class="hero-brand-tag">Strategy. Systems. Scalability.</div>
+        </div>
+
         <div class="hero-line"><span></span></div>
         <p class="hero-sub">Your business operating system</p>
         <p class="hero-copy">
@@ -764,7 +756,7 @@
         </p>
 
         <div class="calendly-shell">
-          <div class="calendly-inline-widget" data-url="https://calendly.com/dmcstrategy" style="min-width:320px;height:780px;"></div>
+          <div class="calendly-inline-widget" data-url="https://calendly.com/dmcstrategy"></div>
         </div>
       </section>
 
@@ -773,7 +765,7 @@
       </footer>
     </section>
   </main>
+
   <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
-
