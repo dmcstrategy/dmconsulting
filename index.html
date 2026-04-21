@@ -1,771 +1,154 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Dawn McPherson Consulting | THE OCTANE FRAMEWORK™</title>
-  <meta
-    name="description"
-    content="Dawn McPherson Consulting implements THE OCTANE FRAMEWORK™ — a business operating system designed to eliminate inefficiency, create structure, and unlock scalable growth."
-  />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-  <style>
-    :root {
-      --bg: #030303;
-      --bg-soft: #0a0604;
-      --gold: #d8a245;
-      --gold-bright: #ffd27a;
-      --gold-deep: #9a621d;
-      --gold-line: rgba(216, 162, 69, 0.56);
-      --gold-soft: rgba(216, 162, 69, 0.18);
-      --gold-faint: rgba(216, 162, 69, 0.08);
-      --text: #f7e6bf;
-      --muted: #ead6ae;
-      --panel: rgba(10, 7, 5, 0.9);
-      --serif: "Cormorant Garamond", Georgia, serif;
-      --sans: "Inter", system-ui, sans-serif;
-    }
+<title>Dawn McPherson Consulting | THE OCTANE FRAMEWORK™</title>
 
-    * { box-sizing: border-box; }
-    html, body { margin: 0; min-height: 100%; }
-    html { scroll-behavior: smooth; }
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
 
-    body {
-      background:
-        radial-gradient(circle at 50% 14%, rgba(255, 211, 122, 0.08), transparent 18%),
-        radial-gradient(circle at 18% 40%, rgba(216, 162, 69, 0.07), transparent 26%),
-        radial-gradient(circle at 84% 45%, rgba(216, 162, 69, 0.07), transparent 24%),
-        linear-gradient(180deg, #020202 0%, #080604 45%, #020202 100%);
-      color: var(--text);
-      overflow-x: hidden;
-      font-family: var(--serif);
-    }
+<style>
+body {
+  margin:0;
+  background:#020202;
+  color:#f7e6bf;
+  font-family:"Cormorant Garamond",serif;
+  text-align:center;
+}
 
-    body::before,
-    body::after {
-      content: "";
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      z-index: 0;
-    }
+h1,h2 {
+  margin:0 0 10px;
+}
 
-    body::before {
-      background-image:
-        linear-gradient(rgba(216, 162, 69, 0.022) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(216, 162, 69, 0.022) 1px, transparent 1px);
-      background-size: 80px 80px;
-      mask-image: radial-gradient(circle at center, black 24%, transparent 88%);
-      opacity: 0.9;
-    }
+.container {
+  max-width:1000px;
+  margin:auto;
+  padding:40px 20px;
+}
 
-    body::after {
-      background:
-        radial-gradient(circle at 12% 22%, rgba(255, 210, 122, 0.75) 0 1px, transparent 2px),
-        radial-gradient(circle at 22% 62%, rgba(255, 210, 122, 0.72) 0 1px, transparent 2px),
-        radial-gradient(circle at 75% 28%, rgba(255, 210, 122, 0.68) 0 1px, transparent 2px),
-        radial-gradient(circle at 85% 68%, rgba(255, 210, 122, 0.62) 0 1px, transparent 2px),
-        radial-gradient(circle at 58% 87%, rgba(255, 210, 122, 0.52) 0 1px, transparent 2px),
-        radial-gradient(circle at 48% 38%, rgba(255, 210, 122, 0.58) 0 1px, transparent 2px);
-      filter: blur(0.35px);
-      opacity: 0.72;
-    }
+.logo {
+  max-width:600px;
+  margin:auto;
+}
 
-    a { color: inherit; text-decoration: none; }
-    img { display: block; max-width: 100%; }
+.tagline {
+  font-family:Inter,sans-serif;
+  letter-spacing:3px;
+  text-transform:uppercase;
+  color:#d8a245;
+  font-size:12px;
+}
 
-    .poster {
-      position: relative;
-      z-index: 1;
-      width: min(96vw, 1100px);
-      min-height: 100vh;
-      margin: 10px auto;
-      padding: 20px;
-    }
+.audience {
+  font-family:Inter,sans-serif;
+  margin-top:10px;
+  font-size:12px;
+  opacity:.7;
+  letter-spacing:2px;
+}
 
-    .frame {
-      position: relative;
-      min-height: calc(100vh - 20px);
-      overflow: hidden;
-      border: 1px solid rgba(216, 162, 69, 0.22);
-      background:
-        radial-gradient(circle at 50% 44%, rgba(216, 162, 69, 0.08), transparent 35%),
-        linear-gradient(180deg, rgba(7, 5, 4, 0.95), rgba(10, 7, 5, 0.93));
-      box-shadow:
-        0 0 0 1px rgba(216, 162, 69, 0.08) inset,
-        0 0 120px rgba(0,0,0,0.55),
-        0 0 80px rgba(216,162,69,0.05);
-      padding: 34px 38px 40px;
-    }
+.button {
+  display:inline-block;
+  margin-top:20px;
+  padding:16px 28px;
+  background:linear-gradient(#f0c979,#cc8f2f);
+  color:black;
+  font-family:Inter;
+  text-decoration:none;
+  font-weight:600;
+}
 
-    .frame::before,
-    .frame::after,
-    .corner-bl,
-    .corner-br {
-      content: "";
-      position: absolute;
-      width: 120px;
-      height: 120px;
-      z-index: 4;
-      pointer-events: none;
-      opacity: 0.9;
-    }
+.section {
+  margin-top:60px;
+}
 
-    .frame::before {
-      top: 14px;
-      left: 14px;
-      border-top: 2px solid rgba(216,162,69,.65);
-      border-left: 2px solid rgba(216,162,69,.65);
-    }
+.card {
+  border:1px solid rgba(216,162,69,.3);
+  padding:20px;
+  margin:10px;
+}
 
-    .frame::after {
-      top: 14px;
-      right: 14px;
-      border-top: 2px solid rgba(216,162,69,.65);
-      border-right: 2px solid rgba(216,162,69,.65);
-    }
+.grid {
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+}
 
-    .corner-bl {
-      left: 14px;
-      bottom: 14px;
-      border-left: 2px solid rgba(216,162,69,.65);
-      border-bottom: 2px solid rgba(216,162,69,.65);
-    }
-
-    .corner-br {
-      right: 14px;
-      bottom: 14px;
-      border-right: 2px solid rgba(216,162,69,.65);
-      border-bottom: 2px solid rgba(216,162,69,.65);
-    }
-
-    .ornament {
-      position: absolute;
-      inset: 0;
-      pointer-events: none;
-      z-index: 1;
-    }
-
-    .header {
-      position: relative;
-      z-index: 3;
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      padding-bottom: 12px;
-    }
-
-    .top-cta,
-    .cta {
-      font-family: var(--sans);
-      font-weight: 600;
-      border: 1px solid rgba(216,162,69,.38);
-      background: rgba(0,0,0,.28);
-      color: #f3cd8a;
-      box-shadow: 0 0 0 1px rgba(216,162,69,.08) inset;
-      transition: transform .2s ease, box-shadow .2s ease;
-      cursor: pointer;
-    }
-
-    .top-cta:hover,
-    .cta:hover {
-      transform: translateY(-1px);
-      box-shadow: 0 0 0 1px rgba(216,162,69,.12) inset, 0 0 20px rgba(216,162,69,.12);
-    }
-
-    .top-cta {
-      padding: 15px 18px;
-      white-space: nowrap;
-      font-size: 1rem;
-      position: relative;
-      z-index: 3;
-    }
-
-    .hero {
-      position: relative;
-      z-index: 3;
-      text-align: center;
-      padding: 6px 0 18px;
-    }
-
-    .hero-brand-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      margin: 2px auto 18px;
-      width: 100%;
-    }
-
-    .hero-main-logo {
-      width: clamp(280px, 48vw, 700px);
-      max-width: 100%;
-      filter:
-        drop-shadow(0 0 18px rgba(216,162,69,.28))
-        drop-shadow(0 0 48px rgba(216,162,69,.16));
-    }
-
-    .hero-brand-tag {
-      margin-top: 10px;
-      font-family: var(--sans);
-      text-transform: uppercase;
-      letter-spacing: 0.28em;
-      font-size: 0.82rem;
-      color: #d9b16c;
-      text-align: center;
-    }
-
-    .hero-line,
-    .section-line {
-      position: relative;
-      height: 34px;
-      margin: 0 auto 12px;
-      width: min(100%, 980px);
-    }
-
-    .hero-line::before,
-    .hero-line::after,
-    .section-line::before,
-    .section-line::after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      width: calc(50% - 18px);
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(216,162,69,.65));
-    }
-
-    .hero-line::before,
-    .section-line::before { left: 0; }
-    .hero-line::after,
-    .section-line::after { right: 0; transform: scaleX(-1); }
-
-    .hero-line span,
-    .section-line span {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 18px;
-      height: 18px;
-      transform: translate(-50%, -50%) rotate(45deg);
-      border: 1px solid rgba(216,162,69,.65);
-      background: linear-gradient(180deg, rgba(216,162,69,.32), rgba(216,162,69,.08));
-      box-shadow: 0 0 18px rgba(216,162,69,.18);
-    }
-
-    .hero-sub {
-      font-size: clamp(1.5rem, 3vw, 3rem);
-      line-height: 1.05;
-      color: var(--muted);
-      margin: 0 0 18px;
-    }
-
-    .hero-copy {
-      max-width: 760px;
-      margin: 0 auto 26px;
-      font-family: var(--sans);
-      font-size: clamp(1rem, 1.4vw, 1.2rem);
-      line-height: 1.85;
-      color: #f1e2c8;
-    }
-
-    .cta {
-      display: inline-block;
-      padding: 18px 34px;
-      font-size: 1.05rem;
-      margin-top: 2px;
-      color: #1c1207;
-      background: linear-gradient(180deg, #f0c979 0%, #cc8f2f 100%);
-    }
-
-    .framework {
-      position: relative;
-      z-index: 3;
-      padding-top: 22px;
-      text-align: center;
-    }
-
-    .section-title {
-      font-size: clamp(2.6rem, 5vw, 4.9rem);
-      line-height: .95;
-      margin: 0 0 10px;
-      color: var(--text);
-      text-shadow: 0 0 14px rgba(216,162,69,.08);
-    }
-
-    .section-copy {
-      max-width: 800px;
-      margin: 0 auto;
-      font-family: var(--sans);
-      line-height: 1.8;
-      color: var(--muted);
-      font-size: clamp(1rem, 1.35vw, 1.15rem);
-    }
-
-    .diagram-wrap {
-      position: relative;
-      max-width: 980px;
-      margin: 28px auto 0;
-      min-height: 760px;
-      padding-bottom: 18px;
-    }
-
-    .connector-svg {
-      position: absolute;
-      inset: 0;
-      width: 100%;
-      height: 100%;
-      z-index: 0;
-      pointer-events: none;
-      filter: drop-shadow(0 0 8px rgba(216,162,69,.22)) drop-shadow(0 0 22px rgba(216,162,69,.15));
-    }
-
-    .card,
-    .hex {
-      position: absolute;
-      z-index: 2;
-      background: linear-gradient(180deg, rgba(9,7,6,.92), rgba(12,9,7,.86));
-      box-shadow: 0 0 0 1px rgba(216,162,69,.08) inset, 0 0 22px rgba(216,162,69,.15), 0 0 56px rgba(216,162,69,.08);
-      overflow: hidden;
-    }
-
-    .card::before,
-    .hex::before {
-      content: "";
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(circle at 50% 45%, rgba(216,162,69,.11), transparent 60%);
-      pointer-events: none;
-    }
-
-    .card {
-      width: 250px;
-      min-height: 150px;
-      padding: 30px 20px 24px;
-      clip-path: polygon(10% 0%, 90% 0%, 100% 16%, 100% 84%, 90% 100%, 10% 100%, 0% 84%, 0% 16%);
-      border: 1px solid rgba(216,162,69,.42);
-    }
-
-    .hex {
-      width: 310px;
-      height: 350px;
-      left: 50%;
-      top: 286px;
-      transform: translateX(-50%);
-      clip-path: polygon(24% 0%, 76% 0%, 100% 50%, 76% 100%, 24% 100%, 0% 50%);
-      border: 1px solid rgba(216,162,69,.56);
-      display: grid;
-      place-items: center;
-      box-shadow: 0 0 0 1px rgba(216,162,69,.12) inset, 0 0 24px rgba(216,162,69,.18), 0 0 60px rgba(216,162,69,.1);
-    }
-
-    .num {
-      position: absolute;
-      top: 8px;
-      left: 50%;
-      transform: translateX(-50%);
-      min-width: 42px;
-      height: 28px;
-      padding: 0 8px;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      border: 1px solid rgba(216,162,69,.6);
-      background: rgba(0,0,0,.72);
-      font-family: var(--sans);
-      font-size: .9rem;
-      font-weight: 700;
-      color: #f0cb88;
-      z-index: 3;
-    }
-
-    .card h3,
-    .hex h3 {
-      margin: 20px 0 8px;
-      font-size: clamp(1.9rem, 3vw, 2.7rem);
-      line-height: .95;
-      text-transform: uppercase;
-      color: var(--text);
-    }
-
-    .card p,
-    .hex p {
-      margin: 0;
-      font-family: var(--sans);
-      color: var(--muted);
-      line-height: 1.7;
-      font-size: 1rem;
-    }
-
-    .hex-inner {
-      width: 220px;
-      text-align: center;
-    }
-
-    .icon-ring {
-      width: 62px;
-      height: 62px;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 10px;
-      border-radius: 50%;
-      border: 1px solid rgba(216,162,69,.56);
-      color: #f1cb84;
-      font-size: 2rem;
-      box-shadow: 0 0 18px rgba(216,162,69,.18);
-      font-family: var(--sans);
-    }
-
-    .diagnose { left: 50%; top: 50px; transform: translateX(-50%); }
-    .capture { left: 40px; top: 248px; }
-    .build { left: 40px; top: 520px; }
-    .design-side { right: 40px; top: 248px; }
-    .scale { right: 40px; top: 520px; }
-
-    .pillars {
-      display: grid;
-      grid-template-columns: repeat(6, 1fr);
-      gap: 14px;
-      margin: 26px auto 0;
-      max-width: 1000px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .pillar {
-      text-align: center;
-      position: relative;
-      padding-top: 16px;
-      font-family: var(--sans);
-    }
-
-    .pillar::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      left: 50%;
-      transform: translateX(-50%);
-      width: 1px;
-      height: 12px;
-      background: linear-gradient(180deg, rgba(216,162,69,.9), rgba(216,162,69,.15));
-      box-shadow: 0 0 8px rgba(216,162,69,.18);
-    }
-
-    .pillar strong {
-      display: block;
-      color: #efc983;
-      font-size: 1rem;
-      font-weight: 500;
-      margin-bottom: 6px;
-    }
-
-    .pillar span {
-      display: block;
-      color: rgba(234,214,174,.72);
-      font-size: .84rem;
-      line-height: 1.45;
-    }
-
-    .footer-cta {
-      position: relative;
-      z-index: 3;
-      text-align: center;
-      padding-top: 34px;
-    }
-
-    .footer-cta h2 {
-      margin: 0 0 12px;
-      font-size: clamp(2.2rem, 4.2vw, 4rem);
-      line-height: .95;
-    }
-
-    .footer-cta p {
-      max-width: 730px;
-      margin: 0 auto 24px;
-      font-family: var(--sans);
-      color: var(--muted);
-      line-height: 1.8;
-      font-size: 1.02rem;
-    }
-
-    .calendly-shell {
-      width: min(100%, 920px);
-      margin: 26px auto 0;
-      padding: 16px;
-      border: 1px solid rgba(216,162,69,.24);
-      background: linear-gradient(180deg, rgba(8,6,5,.82), rgba(12,8,6,.88));
-      box-shadow: 0 0 0 1px rgba(216,162,69,.06) inset, 0 0 28px rgba(216,162,69,.08);
-    }
-
-    .calendly-inline-widget {
-      width: 100%;
-      min-width: 320px;
-      height: 780px;
-      border: 1px solid rgba(216,162,69,.14);
-      box-shadow: 0 0 22px rgba(216,162,69,.05) inset;
-      background: rgba(0,0,0,.14);
-    }
-
-    footer {
-      margin-top: 30px;
-      padding-top: 18px;
-      border-top: 1px solid rgba(216,162,69,.12);
-      text-align: center;
-      font-family: var(--sans);
-      text-transform: uppercase;
-      letter-spacing: .06em;
-      font-size: .88rem;
-      color: rgba(234,214,174,.62);
-      position: relative;
-      z-index: 3;
-    }
-
-    @media (max-width: 980px) {
-      .frame { padding: 24px 20px 30px; }
-      .diagram-wrap {
-        min-height: auto;
-        display: grid;
-        gap: 18px;
-      }
-      .connector-svg { display: none; }
-      .card, .hex, .diagnose, .capture, .build, .design-side, .scale {
-        position: relative;
-        left: auto;
-        right: auto;
-        top: auto;
-        transform: none;
-        width: 100%;
-        max-width: 520px;
-        margin: 0 auto;
-      }
-      .hex { height: 290px; order: -1; }
-      .pillars { grid-template-columns: repeat(3, 1fr); }
-      .hero-main-logo { width: clamp(250px, 58vw, 560px); }
-    }
-
-    @media (max-width: 640px) {
-      .poster { width: calc(100vw - 10px); margin: 5px auto; padding: 0; }
-      .frame { min-height: auto; padding: 18px 14px 24px; }
-      .top-cta { width: 100%; text-align: center; }
-      .pillars { grid-template-columns: 1fr 1fr; }
-      .hero-copy, .section-copy, .footer-cta p { font-size: .96rem; }
-      .hero-brand-tag { letter-spacing: .16em; font-size: .72rem; }
-      .calendly-shell { padding: 10px; }
-      .calendly-inline-widget { height: 700px; }
-    }
-
-    @media (max-width: 440px) {
-      .pillars { grid-template-columns: 1fr; }
-    }
-  </style>
+iframe {
+  width:100%;
+  height:900px;
+  border:none;
+}
+</style>
 </head>
+
 <body>
-  <main class="poster">
-    <section class="frame">
-      <div class="corner-bl"></div>
-      <div class="corner-br"></div>
 
-      <svg class="ornament" viewBox="0 0 1000 1700" preserveAspectRatio="none" aria-hidden="true">
-        <defs>
-          <linearGradient id="goldStroke" x1="0" y1="0" x2="1" y2="0">
-            <stop offset="0%" stop-color="rgba(216,162,69,0)" />
-            <stop offset="48%" stop-color="rgba(255,210,122,1)" />
-            <stop offset="100%" stop-color="rgba(216,162,69,0)" />
-          </linearGradient>
-          <filter id="glow" x="-30%" y="-30%" width="160%" height="160%">
-            <feGaussianBlur stdDeviation="3" result="blur"/>
-            <feMerge>
-              <feMergeNode in="blur"/>
-              <feMergeNode in="SourceGraphic"/>
-            </feMerge>
-          </filter>
-        </defs>
+<div class="container">
 
-        <g stroke="rgba(216,162,69,.25)" stroke-width="1.3" fill="none">
-          <path d="M0 250 L120 250 L180 190 L260 190" />
-          <path d="M0 305 L90 305 L170 225 L250 225 L290 185" />
-          <path d="M1000 250 L880 250 L820 190 L740 190" />
-          <path d="M1000 305 L910 305 L830 225 L750 225 L710 185" />
-          <path d="M0 690 L100 690 L180 610 L300 610" />
-          <path d="M0 760 L135 760 L205 700 L300 700" />
-          <path d="M1000 690 L900 690 L820 610 L700 610" />
-          <path d="M1000 760 L865 760 L795 700 L700 700" />
-          <path d="M0 1180 L140 1180 L230 1090 L330 1090" />
-          <path d="M1000 1180 L860 1180 L770 1090 L670 1090" />
-          <path d="M0 1320 L170 1320 L260 1230 L350 1230" />
-          <path d="M1000 1320 L830 1320 L740 1230 L650 1230" />
-        </g>
+<img src="logo-dark.png" class="logo">
 
-        <g stroke="url(#goldStroke)" stroke-width="2" fill="none" filter="url(#glow)">
-          <path d="M500 402 L500 615" />
-          <path d="M500 615 L500 840" />
-          <path d="M500 615 L320 615" />
-          <path d="M500 615 L680 615" />
-          <path d="M500 790 L320 790" />
-          <path d="M500 790 L680 790" />
-          <path d="M500 930 L500 1115" />
-          <path d="M500 1115 L500 1260" />
-          <path d="M500 920 L340 920" />
-          <path d="M500 920 L660 920" />
-          <path d="M250 615 L180 615 L130 665" />
-          <path d="M750 615 L820 615 L870 665" />
-          <path d="M250 920 L180 920 L130 970" />
-          <path d="M750 920 L820 920 L870 970" />
-        </g>
+<div class="tagline">Strategy. Systems. Scalability.</div>
+<div class="audience">Built for $500K–$5M service businesses ready to scale</div>
 
-        <g fill="#ffd27a" filter="url(#glow)">
-          <circle cx="500" cy="615" r="4" />
-          <circle cx="500" cy="790" r="4" />
-          <circle cx="500" cy="920" r="4" />
-          <circle cx="500" cy="1115" r="4" />
-          <circle cx="320" cy="615" r="3.5" />
-          <circle cx="680" cy="615" r="3.5" />
-          <circle cx="320" cy="790" r="3.5" />
-          <circle cx="680" cy="790" r="3.5" />
-          <circle cx="250" cy="615" r="3.5" />
-          <circle cx="750" cy="615" r="3.5" />
-          <circle cx="250" cy="920" r="3.5" />
-          <circle cx="750" cy="920" r="3.5" />
-        </g>
-      </svg>
+<h2>Your business operating system</h2>
 
-      <header class="header">
-        <a class="top-cta" href="#contact">Book a Strategy Call</a>
-      </header>
+<p>
+Dawn McPherson Consulting transforms businesses through the OCTANE Framework™ — 
+a system designed to eliminate inefficiency and unlock scalable growth.
+</p>
 
-      <section class="hero">
-        <div class="hero-brand-block">
-          <img class="hero-main-logo" src="logo-dark.png" alt="Dawn McPherson Consulting logo" />
-          <div class="hero-brand-tag">Strategy. Systems. Scalability.</div>
-        </div>
+<a href="#contact" class="button">Enter OCTANE</a>
 
-        <div class="hero-line"><span></span></div>
-        <p class="hero-sub">Your business operating system</p>
-        <p class="hero-copy">
-          Dawn McPherson Consulting transforms businesses with a proven precision system built for scalability and results.
-          This is consulting delivered through a framework — designed to reduce friction, sharpen execution, and make growth sustainable.
-        </p>
-        <a class="cta" href="#contact">Book a Strategy Call</a>
-      </section>
+<!-- CALCULATOR -->
+<div class="section">
+<h1>Revenue Leak Calculator</h1>
 
-      <section class="framework" id="framework">
-        <div class="section-line"><span></span></div>
-        <h1 class="section-title">The OCTANE Framework™</h1>
-        <p class="section-copy">
-          Turn chaos into consistency with a precision framework designed for high-impact business growth.
-        </p>
+<p>
+You’re losing money somewhere. This shows you where.
+</p>
 
-        <div class="diagram-wrap">
-          <svg class="connector-svg" viewBox="0 0 980 760" preserveAspectRatio="none" aria-hidden="true">
-            <defs>
-              <linearGradient id="lineGlow" x1="0" y1="0" x2="1" y2="0">
-                <stop offset="0%" stop-color="rgba(216,162,69,0.15)"/>
-                <stop offset="50%" stop-color="rgba(255,210,122,1)"/>
-                <stop offset="100%" stop-color="rgba(216,162,69,0.15)"/>
-              </linearGradient>
-              <filter id="softGlow" x="-50%" y="-50%" width="200%" height="200%">
-                <feGaussianBlur stdDeviation="4" result="g" />
-                <feMerge>
-                  <feMergeNode in="g" />
-                  <feMergeNode in="SourceGraphic" />
-                </feMerge>
-              </filter>
-            </defs>
-            <g stroke="url(#lineGlow)" stroke-width="3" fill="none" filter="url(#softGlow)">
-              <path d="M490 85 L490 290"/>
-              <path d="M490 430 L490 740"/>
-              <path d="M490 380 L230 380"/>
-              <path d="M490 380 L750 380"/>
-              <path d="M490 550 L220 550"/>
-              <path d="M490 550 L760 550"/>
-              <path d="M230 380 L175 380 L120 438"/>
-              <path d="M750 380 L805 380 L860 438"/>
-              <path d="M220 550 L165 550 L110 608"/>
-              <path d="M760 550 L815 550 L870 608"/>
-            </g>
-            <g fill="#ffd27a" filter="url(#softGlow)">
-              <circle cx="490" cy="290" r="5"/>
-              <circle cx="490" cy="380" r="5"/>
-              <circle cx="490" cy="550" r="5"/>
-              <circle cx="490" cy="640" r="5"/>
-              <circle cx="230" cy="380" r="4"/>
-              <circle cx="750" cy="380" r="4"/>
-              <circle cx="220" cy="550" r="4"/>
-              <circle cx="760" cy="550" r="4"/>
-            </g>
-          </svg>
+<iframe src="https://dmc-revenue-calculator-95cac569.viktor.space"></iframe>
 
-          <article class="card diagnose">
-            <div class="num">01</div>
-            <h3>Diagnose</h3>
-            <p>Find friction points</p>
-          </article>
+<a href="#contact" class="button">Fix the Leak</a>
+</div>
 
-          <article class="card capture">
-            <div class="num">02</div>
-            <h3>Capture</h3>
-            <p>Document the current state</p>
-          </article>
+<!-- PARTNER -->
+<div class="section">
+<h1>Partner With the OCTANE System</h1>
 
-          <article class="card build">
-            <div class="num">04</div>
-            <h3>Build</h3>
-            <p>Implement the solution</p>
-          </article>
+<p>
+Built for CPAs, advisors, and operators who see what others miss.
+</p>
 
-          <article class="card design-side">
-            <div class="num">03</div>
-            <h3>Design</h3>
-            <p>Engineer the system</p>
-          </article>
+<div class="grid">
+<div class="card">
+<h2>Become a Partner</h2>
+<p>Refer clients. Earn on every engagement.</p>
+</div>
 
-          <article class="card scale">
-            <div class="num">05</div>
-            <h3>Scale</h3>
-            <p>Optimize and expand</p>
-          </article>
+<div class="card">
+<h2>Insider Access</h2>
+<p>Give your clients real operational solutions.</p>
+</div>
+</div>
+</div>
 
-          <article class="hex">
-            <div class="hex-inner">
-              <div class="icon-ring">◌</div>
-              <h3>Design</h3>
-              <p>Engineer the system</p>
-            </div>
-          </article>
-        </div>
+<!-- BOOKING -->
+<div id="contact" class="section">
+<h1>Book Your Strategy Call</h1>
 
-        <div class="pillars">
-          <div class="pillar"><strong>Operations</strong><span>Streamline and align</span></div>
-          <div class="pillar"><strong>Capture</strong><span>Gain clarity</span></div>
-          <div class="pillar"><strong>Technical</strong><span>Build the foundation</span></div>
-          <div class="pillar"><strong>Acceleration</strong><span>Drive momentum</span></div>
-          <div class="pillar"><strong>Network</strong><span>Leverage connections</span></div>
-          <div class="pillar"><strong>Exponential</strong><span>Multiply results</span></div>
-        </div>
-      </section>
+<div class="calendly-inline-widget"
+data-url="https://calendly.com/dmcstrategy"
+style="min-width:320px;height:700px;">
+</div>
+</div>
 
-      <section class="footer-cta" id="contact">
-        <div class="section-line"><span></span></div>
-        <h2>Book Your Strategy Call</h2>
-        <p>
-          Choose a time that works for you. This is the fastest way to start the conversation and step into the OCTANE Framework™.
-        </p>
+</div>
 
-        <div class="calendly-shell">
-          <div class="calendly-inline-widget" data-url="https://calendly.com/dmcstrategy"></div>
-        </div>
-      </section>
+<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
 
-      <footer>
-        Dawn McPherson Consulting · The OCTANE Framework™
-      </footer>
-    </section>
-  </main>
-
-  <script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
 </body>
 </html>
